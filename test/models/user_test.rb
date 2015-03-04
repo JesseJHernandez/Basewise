@@ -120,9 +120,9 @@ class UserTest < ActiveSupport::TestCase
         end
       end
 
+      context "when the user does not exist"
         should "return false" do
-          assert_not User.authenticate(email: "foobar@fo
-      context "when the user does not exist" doo.com", password: "foobar2$" )
+          assert_not User.authenticate(email: "foobar@fodoo.com", password: "foobar2$")
         end
       end
     end
@@ -146,6 +146,4 @@ class UserTest < ActiveSupport::TestCase
         assert_not User.authenticate(email: @user.email, password: "foosdsfsd1239")
       end
     end
-
-    end
-end
+  end
